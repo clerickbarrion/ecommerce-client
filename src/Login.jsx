@@ -26,7 +26,7 @@ export default function Login() {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(data)
             }
-            const result = await fetch(`http://localhost:4000/api/signUp`,options).then(res=>res.json()).catch(err=>err)
+            const result = await fetch(`https://ecommerce-server.glitch.me/api/signUp`,options).then(res=>res.json()).catch(err=>err)
             if(result.error){
                 document.getElementById('error-message').textContent = result.error
             } else {
@@ -38,7 +38,7 @@ export default function Login() {
     }
 
     async function login(){
-        const result = await fetch(`http://localhost:4000/api/login?username=${document.getElementById('login-username').value}&password=${document.getElementById('login-password').value}`).then(res=>res.json()).catch(err=>err)
+        const result = await fetch(`https://ecommerce-server.glitch.me/api/login?username=${document.getElementById('login-username').value}&password=${document.getElementById('login-password').value}`).then(res=>res.json()).catch(err=>err)
 
         if(result.error){
             document.getElementById('error-message').textContent = result.error

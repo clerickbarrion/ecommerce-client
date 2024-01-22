@@ -32,7 +32,7 @@ function Fish(props){
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(data)
             }
-            fetch('http://localhost:4000/api/updateCart', options)
+            fetch('https://ecommerce-server.glitch.me/api/updateCart', options)
 
         })
         items.appendChild(p)
@@ -57,7 +57,7 @@ function Fish(props){
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data)
         }
-        fetch('http://localhost:4000/api/updateCart', options)
+        fetch('https://ecommerce-server.glitch.me/api/updateCart', options)
 
     }
     return(
@@ -77,7 +77,7 @@ function Article(props){
     const [data,setData] = useState([{}])
 
     useEffect(()=>{
-        fetch(`/api/getFish?type=${props.type}&lowest=${props.lowest}&highest=${props.highest}`)
+        fetch(`https://ecommerce-server.glitch.me/api/getFish?type=${props.type}&lowest=${props.lowest}&highest=${props.highest}`)
         .then(res=>res.json()).then(fish=>{setData(fish)})
     },[])
 

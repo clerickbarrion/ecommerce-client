@@ -6,7 +6,7 @@ function PurchaseHistory(){
   const [history,setHistory] = useState(0)
 
   useEffect(()=>{
-    fetch(`http://localhost:4000/api/retrieveHistory?username=${localStorage.getItem('username')}`)
+    fetch(`ecommerce-server.glitch.me/api/retrieveHistory?username=${localStorage.getItem('username')}`)
     .then(res=>res.json()).then(history=>setHistory(history))
   },[])
 

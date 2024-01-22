@@ -58,7 +58,7 @@ function CartItem(props){
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
   }
-  fetch('http://localhost:4000/api/updateCart', options)
+  fetch('https://ecommerce-server.glitch.me/api/updateCart', options)
 
   }
 
@@ -110,7 +110,7 @@ export default function Checkout() {
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(data)
       }
-      fetch('http://localhost:4000/api/uploadHistory',options)
+      fetch('https://ecommerce-server.glitch.me/api/uploadHistory',options)
   
       localStorage.setItem('cart','[]')
   
@@ -125,7 +125,7 @@ export default function Checkout() {
           body: JSON.stringify(data)
       }
   
-      fetch('http://localhost:4000/api/updateCart',options)
+      fetch('https://ecommerce-server.glitch.me/api/updateCart',options)
   
       window.location = `${window.location.origin}/account`
     }

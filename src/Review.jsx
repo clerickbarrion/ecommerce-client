@@ -19,7 +19,7 @@ function CommentSection(){
   const [comments, setComments] = useState(null)
 
   useEffect(()=>{
-    fetch('http://localhost:4000/api/getComments').then(res=>res.json())
+    fetch('https://ecommerce-server.glitch.me/api/getComments').then(res=>res.json())
     .then(comments=>setComments(comments))
   },[])
   return (
@@ -74,7 +74,7 @@ function InsertComment(){
       body: JSON.stringify(data)
     }
 
-    fetch('http://localhost:4000/api/uploadComment', options)
+    fetch('https://ecommerce-server.glitch.me/api/uploadComment', options)
 
     e.target.reset()
   }
