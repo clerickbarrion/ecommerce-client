@@ -9,7 +9,7 @@ function Cart(){
     JSON.parse(localStorage.getItem('cart')).forEach(item =>{
       total += Number(item.price)
     })
-  }catch{}
+  }catch{localStorage.setItem('cart',"[]")}
   
 
   return (
