@@ -6,14 +6,14 @@ function PurchaseHistory(){
   const [history,setHistory] = useState(0)
 
   useEffect(()=>{
-    fetch(`ecommerce-server.glitch.me/api/retrieveHistory?username=${localStorage.getItem('username')}`)
+    fetch(`https://ecommerce-server.glitch.me/api/retrieveHistory?username=${localStorage.getItem('username')}`)
     .then(res=>res.json()).then(history=>setHistory(history))
   },[])
 
   return (
     <>
     <h2>Purchase History</h2>
-    <div id='order-items'>{history ? history.map(i=><HistoryItem id={i.id} total={i.total} purchase_date={i.purchase_date} address={i.address} deliver_date={i.deliver_date} items={i.items}/>) : <p>Loading History....</p>}</div>
+    <div id='order-items'>{history ? history.map(i=><HistoryItem id={i.id} total={i.total} purchase_date={i.purchase_date} address={i.address} deliver_date={i.deliver_date} items={i.items}/>) : <p>You have no purchase history</p>}</div>
     </>
   )
 }
